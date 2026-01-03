@@ -30,11 +30,24 @@ def decision_tree_predict(features: List[float]) -> int:
 
 @app.post("/predict")
 def predict(data: PredictRequest):
+    print(f"Received request: model={data.model}, features={data.features}")
+    
     if data.model == "Logistic Regression":
         prediction = logistic_regression_predict(data.features)
+        print(f"Logistic Regression prediction: {prediction}")
     elif data.model == "Decision Tree":
         prediction = decision_tree_predict(data.features)
+        print(f"Decision Tree prediction: {prediction}")
     else:
-        return {"error": "Unknown model selected"}
+        print(f"Unknown model: {data.model}")
+        return {"error": f"Unknown model selected: {data.model}"}
 
     return {"prediction": prediction}
+
+@app.get("/")
+def root():
+    return {"message": "Heart Disease Prediction API is running"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
