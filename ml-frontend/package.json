@@ -1,0 +1,11 @@
+{
+  "name": "ml-frontend",
+  "version": "1.0.0",
+  "description": "ML Heart Disease Prediction Frontend",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "keywords": ["ml", "heart-disease", "prediction"],
+  "author": "",
+  "license": "MIT"
+}
