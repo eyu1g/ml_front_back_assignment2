@@ -9,8 +9,9 @@ app = FastAPI(title="Heart Disease Prediction API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://ml-frontend-c716.vercel.app",  # ✅ YOUR REAL FRONTEND
-        "http://localhost:3000"
+        "https://ml-frontend-c716.vercel.app",  # ✅ YOUR VERCEL FRONTEND
+        "http://localhost:3000",
+        "http://localhost:5500"  # For local development
     ],
     allow_methods=["*"],
     allow_headers=["*"],
